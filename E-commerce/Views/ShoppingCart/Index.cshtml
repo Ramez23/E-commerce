@@ -1,0 +1,30 @@
+﻿@model List<E_commerce.Models.ShoppingCart>
+
+<h1>Shopping Cart</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model)
+        {
+            <tr>
+                <td>@cartItem.Product.ProductName</td>
+                <td>@cartItem.UnitPrice</td>
+                <td>@cartItem.Quantity</td>
+                <td>@(cartItem.UnitPrice * cartItem.Quantity)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@cartItem.CartID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@cartItem.CartID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

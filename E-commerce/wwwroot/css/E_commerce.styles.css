@@ -1,0 +1,12 @@
+/* E_commerce.styles.css */
+
+/* Set the background color of the navbar to black */
+header {
+    background-color: black;
+}
+
+/* Set the text color of the navbar links to white for better visibility */
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: white;
+}

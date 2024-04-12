@@ -1,0 +1,15 @@
+﻿@model E_commerce.Models.Product
+
+<h1>Add Product</h1>
+
+<form asp-action="Add" method="post">
+    <div>
+        <label asp-for="ProductName">Product Name</label>
+        <input asp-for="ProductName" />
+    </div>
+    <div>
+        <label asp-for="ProductPrice">Product Price</label>
+        <input asp-for="ProductPrice" />
+    </div>
+    <button type="submit">Add Product</button>
+</form>

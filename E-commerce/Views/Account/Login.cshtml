@@ -1,0 +1,36 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<form asp-controller="Account" asp-action="Login" method="post" class="login-form" onsubmit="return validateLogin()">
+    <div class="form-group">
+        <label for="Email">Email address</label>
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter email" required>
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="password" class="form-control" id="Password" name="Password" placeholder="Password" required>
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script>
+    function validateLogin() {
+        var email = document.getElementById('Email').value;
+        var password = document.getElementById('Password').value;
+
+        if (email.trim() === '') {
+            alert('Email is required.');
+            return false;
+        }
+
+        if (password.trim() === '') {
+            alert('Password is required.');
+            return false;
+        }
+        return true;
+    }
+</script>

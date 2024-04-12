@@ -1,0 +1,19 @@
+﻿@model E_commerce.Models.ShoppingCart
+
+<h1>Edit Item in Cart</h1>
+
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="ProductID">Product</label>
+        @Html.DropDownListFor(model => model.ProductID, (SelectList)ViewBag.Products, "Select a product", new { @class = "form-control" })
+        <span asp-validation-for="ProductID" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Quantity">Quantity</label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="CartID" />
+    <button type="submit">Update</button> |
+    <a asp-action="Index">Back to List</a>
+</form>
